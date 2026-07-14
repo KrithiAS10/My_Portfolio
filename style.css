@@ -17,7 +17,7 @@ body {
 }
 
 .navbar {
-  height: clamp(390px, 41vh, 330px);
+  height: clamp(190px, 41vh, 330px);
   width: 4.8rem;
   border-radius: 23px;
   background-color: rgba(24, 24, 24, 0.9);
