@@ -41,68 +41,18 @@ body {
   gap: 2rem;
   width: auto;
 }
-/* =======================
-   Mobile View
-======================= */
-@media (max-width: 900px) {
-  .navbar {
-    position: fixed;
-    top: 0;
 
-    width: 100%;
-    height: 60px;
-
-    margin: 0;
-
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0px;
-
-    z-index: 1000;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .navbar .nav-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-    width: 100%;
-    height: 100%;
-
-    margin: 0;
-    gap: 0;
-  }
-
-  .navbar a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .navbar img {
-    width: 28px;
-    height: 28px;
-    transition: transform 0.3s ease;
-  }
-
-  .navbar a:hover img {
-    transform: translateY(-3px);
-  }
+.header {
+  margin-top: 90px;
+  position: relative;
+  margin-bottom: 10px;
 }
-
 .heading {
   color: white;
+  position: relative;
   display: flex;
-  margin-top: 60px;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 
 .heading h1 {
@@ -114,17 +64,68 @@ body {
 .heading .web {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.8px white;
-  font-size: clamp(2rem, 5vw, 5rem);
-  margin-bottom: -3vh;
+  font-size: clamp(2rem, 4.5vw, 5rem);
+  text-decoration: none;
 }
 .heading .myName {
-  font-size: clamp(2.3rem, 6vw, 6rem);
-  margin-bottom: 5px;
+  font-size: clamp(2.8rem, 5vw, 6rem);
+  margin-bottom: 20px;
+  text-decoration: none;
 }
 .heading img {
-  width: clamp(180px, 26vw, 380px);
   height: auto;
+  width: clamp(220px, 24vw, 380px);
   display: block;
+
+  margin-top: -4vw; /* overlap subtitle */
+
+  z-index: 2;
+}
+
+@media (max-width: 1200px) {
+  .heading {
+    margin-top: 60px;
+  }
+
+  .heading .myName {
+    font-size: 4.5rem;
+  }
+
+  .heading .web {
+    font-size: 3.8rem;
+  }
+
+  .heading img {
+    width: 300px;
+    top: 47%;
+  }
+}
+@media (max-width: 600px) {
+  .heading {
+    margin-top: 55px;
+  }
+
+  .heading .myName {
+    font-size: 2.3rem;
+    margin-bottom: 8px;
+  }
+
+  .heading .web {
+    font-size: 1.45rem;
+    line-height: 1;
+  }
+
+  .heading img {
+    width: 170px;
+    top: 48%;
+  }
+  main {
+    margin: 75px 16px 24px;
+  }
+  .skills {
+    justify-content: space-between;
+    gap: 20px;
+  }
 }
 
 main {
@@ -208,16 +209,16 @@ ul {
   display: flex;
   align-items: flex-start;
   gap: 40px;
+  margin-left: 20px;
 }
 .pro-head {
   display: flex;
   align-items: baseline;
-  margin-left: 20px;
 }
 
 .pro-head h2,
 h3 {
-  margin: 0;
+  margin: 10px 0;
 }
 
 .pro-head h2 {
@@ -246,7 +247,7 @@ h3 {
 
 .two {
   display: flex;
-  max-width: 73%;
+  max-width: 90%;
   justify-content: right;
   gap: 1vw;
   img {
@@ -257,7 +258,7 @@ h3 {
 }
 .demo-sec {
   width: 100%;
-  max-width: 500px;
+  max-width: 250px;
 }
 
 .description h3 {
@@ -284,7 +285,6 @@ h3 {
 }
 .view-more {
   margin-top: 15px;
-  margin-left: 50px;
   button {
     color: white;
     background-color: rgb(24, 24, 24);
@@ -330,7 +330,6 @@ h3 {
 .section-edu {
   max-width: 500px;
   max-height: 300px;
-  margin-left: 20px;
   margin-top: 20px;
 }
 
@@ -479,38 +478,39 @@ footer {
   /* Main */
 
   main {
-    margin: 90px 20px 30px;
+    margin: 90px 28px 30px;
   }
 
   /* Hero */
 
   .heading {
-    margin-top: 0;
+    margin-top: 70px;
   }
 
   .heading .myName {
-    font-size: 3rem;
+    font-size: 4rem;
+    margin-bottom: 10px;
   }
 
   .heading .web {
-    font-size: 2rem;
-    margin-bottom: 0;
+    font-size: 3rem;
+    line-height: 1;
   }
 
   .heading img {
-    width: 220px;
+    width: 280px;
+    top: 46%;
   }
 
   /* Home */
 
   .home-resume {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
   }
 
   #r-btn {
-    margin-left: 0;
+    margin-left: auto;
   }
 
   /* Skills */
@@ -633,8 +633,8 @@ footer {
 
   .view-more {
     display: flex;
-    justify-content: center;
     margin-top: 30px;
+    margin-left: 0;
   }
 
   /* Education */
