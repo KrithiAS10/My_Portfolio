@@ -17,16 +17,16 @@ body {
 }
 
 .navbar {
-  height: clamp(190px, 41vh, 33 0px);
+  height: clamp(190px, 41vh, 330px);
   width: 4.2rem;
   border-radius: 23px;
   background-color: rgba(24, 24, 24, 0.9);
   backdrop-filter: blur(0.8px);
   position: fixed;
-  margin-top: 160px;
+  margin-top: 130px;
   justify-content: center;
   padding: 17px;
-  margin-left: 50px;
+  margin-left: 100px;
 }
 
 .navbar .nav-links {
@@ -43,11 +43,12 @@ body {
 }
 
 .header {
-  margin-top: 90px;
   position: relative;
   margin-bottom: 10px;
 }
+
 .heading {
+  margin-top: 120px;
   color: white;
   position: relative;
   display: flex;
@@ -64,7 +65,7 @@ body {
 .heading .web {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.9px white;
-  font-size: clamp(2rem, 4.5vw, 5rem);
+  font-size: clamp(2rem, 4vw, 5rem);
   text-decoration: none;
 }
 .heading .myName {
@@ -74,30 +75,62 @@ body {
 }
 .heading img {
   height: auto;
-  width: clamp(220px, 24vw, 380px);
+  width: clamp(220px, 23vw, 380px);
   display: block;
 
-  margin-top: -4vw; /* overlap subtitle */
+  margin-top: -3vw; /* overlap subtitle */
 
   z-index: 2;
 }
 
-/* @media (max-width: 1200px) {
+/* @media (max-width: 1100px) {
+  .header {
+    position: relative;
+    margin-bottom: 10px;
+    width: 1100px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
   .heading {
-    margin-top: 60px;
+    margin-top: 90px;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .heading .myName {
-    font-size: 4.5rem;
+  .heading h1 {
+    text-align: center;
+    font-family: "Chonburi Regular";
+    font-weight: 300;
+    margin: 0;
   }
-
   .heading .web {
-    font-size: 3.8rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.9px white;
+    font-size: clamp(2rem, 4.5vw, 5rem);
+    text-decoration: none;
   }
-
+  .heading .myName {
+    font-size: clamp(2.8rem, 5vw, 6rem);
+    margin-bottom: 20px;
+    text-decoration: none;
+  }
   .heading img {
-    width: 300px;
-    top: 47%;
+    height: auto;
+    width: clamp(220px, 24vw, 380px);
+    display: block;
+
+    margin-top: -4vw; 
+
+    z-index: 2;
+  }
+  .main {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
   }
 } */
 
@@ -163,17 +196,20 @@ img {
   display: flex;
   flex-wrap: wrap;
 
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
+  justify-content: center;
 
-  row-gap: 25px;
-  column-gap: 20px;
+  gap: clamp(15px, 7.5vw, 75px);
 
   margin-top: 30px;
 }
 #sec {
   color: white;
   margin-top: 100px;
+  h1 {
+    font-size: 40px;
+  }
 }
 
 ul {
@@ -196,7 +232,7 @@ h3 {
 }
 
 .pro-head h2 {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .pro-head h3 {
@@ -204,8 +240,8 @@ h3 {
   font-size: 14px;
 }
 .demo {
-  height: 130px;
-  width: 230px;
+  height: 180px;
+  width: 300px;
   border: 2px solid white;
   border-radius: 16px;
   display: flex;
@@ -221,7 +257,7 @@ h3 {
 
 .two {
   display: flex;
-  max-width: 90%;
+  max-width: 100%;
   justify-content: right;
   gap: 1vw;
   img {
@@ -232,7 +268,7 @@ h3 {
 }
 .demo-sec {
   width: 100%;
-  max-width: 250px;
+  max-width: 300px;
 }
 
 .description h3 {
@@ -273,28 +309,27 @@ h3 {
   margin-left: 30px;
   display: block;
   justify-content: space-between;
-  h4 {
-    margin-top: 7px;
-    margin-bottom: 7px;
-    font-size: 15px;
+  p {
+    margin-top: 20px;
   }
 }
 .edu-head {
   display: flex;
   align-items: baseline;
+  font-weight: inherit;
   .year {
     margin-left: auto;
-    font-size: 14px;
+    font-weight: 500;
+  }
+  p {
+    margin-top: 7px;
+    margin-bottom: 7px;
   }
   h2 {
+    font-size: 25px;
     margin: 0;
   }
 }
-
-.edu-head h2 {
-  font-size: 20px;
-}
-
 .section-edu {
   max-width: 700px;
   max-height: 300px;
@@ -388,7 +423,7 @@ footer {
    Mobile View
 ======================= */
 
-@media (max-width: 900px) {
+@media (max-width: 920px) {
   /* Navbar */
 
   .navbar {
@@ -491,7 +526,7 @@ footer {
   .skills {
     justify-content: center;
     flex-wrap: wrap;
-    gap: clamp(15px, 6.5vw, 75px);
+    gap: clamp(5px, 4.5vw, 65px);
   }
 
   /* Projects */
@@ -525,6 +560,7 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    margin: 0;
   }
 
   /* ---------- Demo ---------- */
@@ -619,17 +655,20 @@ footer {
 
   .edu-head {
     flex-direction: row;
-    align-items: flex-start;
-    gap: 4px;
+    h2 {
+      font-size: 20px;
+    }
+    p {
+      max-width: 230px;
+    }
+    p.year {
+      margin-left: 10vw;
+    }
   }
 
-  .edu-head .year {
-    margin-left: auto;
-  }
-
-  .edu-body {
+  /* .edu-body {
     margin-left: 15px;
-  }
+  } */
 
   /* Contact */
 
@@ -654,7 +693,7 @@ footer {
     gap: 8px;
     padding: 15px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 730px) {
     .heading {
       margin-top: 55px;
     }
@@ -680,7 +719,7 @@ footer {
     }
     .skills {
       justify-content: space-between;
-      gap: 20px;
+      gap: 1px;
     }
   }
 }
