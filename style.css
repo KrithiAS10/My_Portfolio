@@ -26,7 +26,7 @@ body {
   margin-top: 130px;
   justify-content: center;
   padding: 17px;
-  margin-left: 100px;
+  margin-left: 50px;
 }
 
 .navbar .nav-links {
@@ -83,61 +83,17 @@ body {
   z-index: 2;
 }
 
-/* @media (max-width: 1100px) {
-  .header {
-    position: relative;
-    margin-bottom: 10px;
-    width: 1100px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .heading {
-    margin-top: 90px;
-    color: white;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .heading h1 {
-    text-align: center;
-    font-family: "Chonburi Regular";
-    font-weight: 300;
-    margin: 0;
-  }
-  .heading .web {
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0.9px white;
-    font-size: clamp(2rem, 4.5vw, 5rem);
-    text-decoration: none;
-  }
-  .heading .myName {
-    font-size: clamp(2.8rem, 5vw, 6rem);
-    margin-bottom: 20px;
-    text-decoration: none;
-  }
-  .heading img {
-    height: auto;
-    width: clamp(220px, 24vw, 380px);
-    display: block;
-
-    margin-top: -4vw; 
-
-    z-index: 2;
-  }
+/* @media (max-width: 1300px) {
   .main {
     width: 100%;
-    max-width: 550px;
+    max-width: 950px;
     margin: 0 auto;
   }
 } */
 
 main {
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 0 170px;
   font-size: 14px;
   p {
     color: white;
@@ -310,7 +266,8 @@ h3 {
   display: block;
   justify-content: space-between;
   p {
-    margin-top: 20px;
+    margin-top: 17px;
+    color: rgb(174, 174, 174);
   }
 }
 .edu-head {
@@ -422,7 +379,6 @@ footer {
 /* =======================
    Mobile View
 ======================= */
-
 @media (max-width: 920px) {
   /* Navbar */
 
@@ -482,8 +438,7 @@ footer {
 
   main {
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    padding: 80px;
   }
 
   /* Hero */
@@ -618,6 +573,7 @@ footer {
   .description p {
     line-height: 1.6;
     margin-bottom: 12px;
+    color: rgb(155, 155, 155);
   }
 
   .description h3 {
@@ -659,10 +615,10 @@ footer {
       font-size: 20px;
     }
     p {
-      max-width: 230px;
+      max-width: 190px;
     }
     p.year {
-      margin-left: 10vw;
+      margin-left: 5vw;
     }
   }
 
@@ -699,13 +655,14 @@ footer {
     }
 
     .heading .myName {
-      font-size: 2.3rem;
+      font-size: 2.2rem;
       margin-bottom: 8px;
     }
 
     .heading .web {
-      font-size: 1.45rem;
+      font-size: 1.9rem;
       line-height: 1;
+      -webkit-text-stroke: 0.3px white;
     }
 
     .heading img {
@@ -714,9 +671,20 @@ footer {
     }
     main {
       width: 100%;
-      max-width: 400px;
-      margin: 0 auto;
+      padding: 50px;
     }
+
+    .demo {
+      width: 100%;
+      height: 180px;
+    }
+
+    .demo img {
+      width: 97.2%;
+      height: 95.8%;
+      border-radius: 14px;
+    }
+
     .skills {
       justify-content: space-between;
       gap: 1px;
