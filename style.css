@@ -65,11 +65,11 @@ body {
 .heading .web {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.9px white;
-  font-size: clamp(2rem, 4vw, 5rem);
+  font-size: clamp(2rem, 4.5vw, 5rem);
   text-decoration: none;
 }
 .heading .myName {
-  font-size: clamp(2.8rem, 5vw, 6rem);
+  font-size: clamp(2.8rem, 5.5vw, 6rem);
   margin-bottom: 20px;
   text-decoration: none;
 }
@@ -260,16 +260,34 @@ h3 {
 .section {
   margin-top: 70px;
 }
+
+.section-more {
+  margin-top: 70px;
+  position: relative;
+  padding-left: 45px;
+  display: none;
+}
+
+.section-more.show {
+  display: block;
+}
+
+/* .view-more {
+  margin-top: 15px;
+} */
 .view-more {
   margin-top: 15px;
-}
-.view-more button {
   color: white;
   background-color: rgb(24, 24, 24);
   border: 2px solid white;
   border-radius: 10px;
   font-size: 17px;
   padding: 9px 18px;
+  cursor: pointer;
+}
+.btn {
+  text-decoration: none;
+  color: white;
 }
 
 .achievement {
@@ -314,12 +332,21 @@ h3 {
   position: relative;
 }
 .section-edu .location {
-  left: -56px;
+  left: -66px;
   top: -15px;
 }
 
 .section-edu .circle {
   top: 5px;
+}
+.section-edu .timeline-end {
+  margin-top: 0px;
+  padding: 0px;
+  height: 0;
+}
+
+.achievement .timeline::before {
+  bottom: 90px;
 }
 
 footer {
@@ -427,7 +454,7 @@ footer {
   position: absolute;
   left: 8px;
   top: 10px;
-  bottom: 40px;
+  bottom: 60px;
   border-left: 2px dashed #555;
 }
 
@@ -439,11 +466,7 @@ footer {
   height: 0;
   background: white;
   border-radius: 20px;
-  /* box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); */
   z-index: 2;
-  /* FIX (added): the JS now sets `height` on every scroll event, which
-     otherwise updates in a slight staircase pattern matching scroll steps.
-     This transition eases each jump so the fill line reads as continuous. */
   transition: height 0.08s linear;
 }
 
@@ -454,8 +477,6 @@ footer {
   width: 55px;
   height: 60px;
   z-index: 100;
-  /* FIX (added): same reasoning as .timeline-progress above — smooths the
-     arrow's `top` position between scroll-event updates. */
   transition: top 0.08s linear;
 }
 
@@ -483,7 +504,7 @@ footer {
 
 .circle {
   position: absolute;
-  left: 1.8px;
+  left: 1.5px;
   top: 17px;
   width: 14px;
   height: 14px;
