@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art | Krithi A S</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="icons/Frame 9 (2).svg" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-links">
+        <a href="index.html"><img src="icons/home.svg" alt="Home" /></a>
+        <a href="index.html#contact"
+          ><img src="icons/about.svg" alt="About"
+        /></a>
+        <a href="art.html"><img src="icons/paint.svg" alt="Arts" /></a>
+        <a href="figma.html"><img src="icons/figma.svg" alt="Figma" /></a>
+      </div>
+    </nav>
+
+    <main class="art-page">
+      <section class="art-hero">
+        <h1>Art &amp; Portraits</h1>
+      </section>
+
+      <section class="art-gallery" aria-label="Art gallery">
+        <figure class="art-piece art-piece-tall">
+          <button
+            class="art-lightbox-trigger"
+            type="button"
+            data-title="Ganapati"
+          >
+            <img src="art_samples/ganapati.png" alt="Ganapati artwork" />
+          </button>
+          <figcaption>Ganapati</figcaption>
+        </figure>
+        <figure class="art-piece art-piece-wide">
+          <button
+            class="art-lightbox-trigger"
+            type="button"
+            data-title="Krishna"
+          >
+            <img src="art_samples/krishna.png" alt="Krishna artwork" />
+          </button>
+          <figcaption>Krishna</figcaption>
+        </figure>
+        <figure class="art-piece art-piece-tall">
+          <button
+            class="art-lightbox-trigger"
+            type="button"
+            data-title="Portrait Study"
+          >
+            <img src="art_samples/img1.png" alt="Portrait artwork" />
+          </button>
+          <figcaption>Portrait Study</figcaption>
+        </figure>
+      </section>
+
+      <section class="art-more">
+        <p>More portraits and recent work</p>
+        <a
+          class="art-instagram"
+          href="https://www.instagram.com/krithz____art?utm_source=ig_web_button_share_sheet&amp;stkn=ZDNlZDc0MzIxNw=="
+          target="_blank"
+          rel="noreferrer"
+        >
+          Visit @krithz____art on Instagram
+          <span aria-hidden="true">&#8599;</span>
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <h4>© 2026 Krithi A S.</h4>
+      <div class="foot">
+        <h4>Built with Passion using HTML, CSS and JS</h4>
+        <!-- <a><img src="icons/react.svg" alt="React" /></a> -->
+      </div>
+    </footer>
+
+    <section class="art-lightbox" id="artLightbox" aria-hidden="true">
+      <button
+        class="art-lightbox-close"
+        type="button"
+        aria-label="Close artwork preview"
+      >
+        &times;
+      </button>
+      <img id="artLightboxImage" src="" alt="" />
+      <p id="artLightboxTitle"></p>
+    </section>
+
+    <script>
+      const artLightbox = document.getElementById("artLightbox");
+      const artLightboxImage = document.getElementById("artLightboxImage");
+      const artLightboxTitle = document.getElementById("artLightboxTitle");
+      const artLightboxClose = document.querySelector(".art-lightbox-close");
+      const artTriggers = document.querySelectorAll(".art-lightbox-trigger");
+
+      function closeArtLightbox() {
+        artLightbox.classList.remove("show");
+        artLightbox.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+      }
+
+      artTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const image = trigger.querySelector("img");
+          artLightboxImage.src = image.src;
+          artLightboxImage.alt = image.alt;
+          artLightboxTitle.textContent = trigger.dataset.title;
+          artLightbox.classList.add("show");
+          artLightbox.setAttribute("aria-hidden", "false");
+          document.body.classList.add("modal-open");
+        });
+      });
+
+      artLightboxClose.addEventListener("click", closeArtLightbox);
+      artLightbox.addEventListener("click", (event) => {
+        if (event.target === artLightbox) closeArtLightbox();
+      });
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeArtLightbox();
+      });
+    </script>
+  </body>
+</html>

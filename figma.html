@@ -11,20 +11,17 @@
     <nav class="navbar">
       <div class="nav-links">
         <a href="index.html"><img src="icons/home.svg" alt="Home" /></a>
-        <a href="index.html#sec"><img src="icons/about.svg" alt="About" /></a>
-        <a href="index.html"><img src="icons/paint.svg" alt="Arts" /></a>
+        <a href="index.html#contact"
+          ><img src="icons/about.svg" alt="About"
+        /></a>
+        <a href="art.html"><img src="icons/paint.svg" alt="Arts" /></a>
         <a href="figma.html"><img src="icons/figma.svg" alt="Figma" /></a>
       </div>
     </nav>
 
     <main class="figma-page">
       <section class="figma-hero">
-        <p class="figma-label">UI / Visual Design</p>
         <h1>Figma Samples</h1>
-        <p>
-          A collection of landing page and interface explorations focused on
-          visual hierarchy, mood, composition, and playful brand presentation.
-        </p>
       </section>
 
       <section class="figma-showcase" aria-label="Figma design samples">
@@ -131,10 +128,10 @@
             colors, and a large product image to make the dish feel immediate
             and appetizing.
           </p>
-          <div class="figma-meta">
+          <!-- <div class="figma-meta">
             <h3>Design Focus</h3>
             <p id="designTools">Figma, typography, image masking</p>
-          </div>
+          </div> -->
         </div>
       </div>
       <button
@@ -151,8 +148,8 @@
     <footer>
       <h4>© 2026 Krithi A S.</h4>
       <div class="foot">
-        <h4>Built with Passion using</h4>
-        <a><img src="icons/react.svg" alt="React" /></a>
+        <h4>Built with Passion using HTML, CSS and JS</h4>
+        <!-- <a><img src="icons/react.svg" alt="React" /></a> -->
       </div>
     </footer>
 
@@ -168,7 +165,7 @@
       const title = document.getElementById("designTitle");
       const role = document.getElementById("designRole");
       const description = document.getElementById("designDescription");
-      const tools = document.getElementById("designTools");
+      // const tools = document.getElementById("designTools");
       const counter = document.getElementById("designCounter");
       let currentIndex = 0;
 
@@ -221,7 +218,7 @@
         title.textContent = card.dataset.title;
         role.textContent = card.dataset.role;
         description.textContent = card.dataset.description;
-        tools.textContent = card.dataset.tools;
+        // tools.textContent = card.dataset.tools;
         detailImage.src = image.src;
         detailImage.alt = image.alt;
         lightboxBg.style.backgroundImage = `url("${image.src}")`;
