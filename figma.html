@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Figma Samples | Krithi A S</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="icons/Frame 9 (2).svg" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-links">
+        <a href="index.html"><img src="icons/home.svg" alt="Home" /></a>
+        <a href="index.html#sec"><img src="icons/about.svg" alt="About" /></a>
+        <a href="index.html"><img src="icons/paint.svg" alt="Arts" /></a>
+        <a href="figma.html"><img src="icons/figma.svg" alt="Figma" /></a>
+      </div>
+    </nav>
+
+    <main class="figma-page">
+      <section class="figma-hero">
+        <p class="figma-label">UI / Visual Design</p>
+        <h1>Figma Samples</h1>
+        <p>
+          A collection of landing page and interface explorations focused on
+          visual hierarchy, mood, composition, and playful brand presentation.
+        </p>
+      </section>
+
+      <section class="figma-showcase" aria-label="Figma design samples">
+        <div class="figma-gallery">
+          <button
+            class="figma-card"
+            type="button"
+            data-title="Yummy Curd Puri"
+            data-role="Food Landing Page"
+            data-tools="Figma, typography, image masking"
+            data-description="A bold food landing page concept with oversized lettering, warm colors, and a large product image to make the dish feel immediate and appetizing."
+          >
+            <img
+              src="figma_samples/s1.png"
+              alt="Yummy Curd Puri landing page design"
+            />
+            <span>Yummy Curd Puri</span>
+          </button>
+
+          <button
+            class="figma-card"
+            type="button"
+            data-title="KFC Promo Banner"
+            data-role="Restaurant Campaign Design"
+            data-tools="Figma, layout, brand composition"
+            data-description="A restaurant promotion concept using dramatic contrast, layered food imagery, and a clear call to action to support fast scanning."
+          >
+            <img
+              src="figma_samples/s2.png"
+              alt="KFC food promotion landing design"
+            />
+            <span>KFC Promo Banner</span>
+          </button>
+
+          <button
+            class="figma-card"
+            type="button"
+            data-title="Minions World Login"
+            data-role="Playful Login Interface"
+            data-tools="Figma, UI layout, visual theming"
+            data-description="A character-led login screen with muted lighting, glowing controls, and a split layout for sign-up and account creation flows."
+          >
+            <img
+              src="figma_samples/s3.png"
+              alt="Dark Minions World login interface design"
+            />
+            <span>Minions World Login</span>
+          </button>
+
+          <button
+            class="figma-card"
+            type="button"
+            data-title="Minions World Bright Theme"
+            data-role="Alternate UI Theme"
+            data-tools="Figma, color exploration, UI states"
+            data-description="A brighter variation of the Minions World interface, exploring how the same layout can shift mood through color, contrast, and button styling."
+          >
+            <img
+              src="figma_samples/s4.png"
+              alt="Bright Minions World login interface design"
+            />
+            <span>Minions Bright Theme</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <section
+      class="figma-lightbox"
+      id="figmaLightbox"
+      aria-hidden="true"
+      aria-label="Selected Figma design preview"
+    >
+      <div class="figma-blur-bg" id="lightboxBg"></div>
+      <button
+        class="figma-close"
+        type="button"
+        id="closeDesign"
+        aria-label="Close preview"
+      >
+        &times;
+      </button>
+      <button
+        class="figma-nav-btn figma-prev"
+        type="button"
+        id="prevDesign"
+        aria-label="Previous design"
+      >
+        &#8249;
+      </button>
+      <div class="figma-preview">
+        <div class="figma-detail-image">
+          <img
+            src="figma_samples/s1.png"
+            alt="Yummy Curd Puri landing page design"
+            id="detailImage"
+          />
+        </div>
+        <div class="figma-details">
+          <p class="figma-label" id="designRole">Food Landing Page</p>
+          <h2 id="designTitle">Yummy Curd Puri</h2>
+          <p id="designDescription">
+            A bold food landing page concept with oversized lettering, warm
+            colors, and a large product image to make the dish feel immediate
+            and appetizing.
+          </p>
+          <div class="figma-meta">
+            <h3>Design Focus</h3>
+            <p id="designTools">Figma, typography, image masking</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="figma-nav-btn figma-next"
+        type="button"
+        id="nextDesign"
+        aria-label="Next design"
+      >
+        &#8250;
+      </button>
+      <p class="figma-counter" id="designCounter">1 / 4</p>
+    </section>
+
+    <footer>
+      <h4>© 2026 Krithi A S.</h4>
+      <div class="foot">
+        <h4>Built with Passion using</h4>
+        <a><img src="icons/react.svg" alt="React" /></a>
+      </div>
+    </footer>
+
+    <script>
+      const cards = document.querySelectorAll(".figma-card");
+      const lightbox = document.getElementById("figmaLightbox");
+      const lightboxBg = document.getElementById("lightboxBg");
+      const closeDesign = document.getElementById("closeDesign");
+      const prevDesign = document.getElementById("prevDesign");
+      const nextDesign = document.getElementById("nextDesign");
+      const detailImage = document.getElementById("detailImage");
+      const detailImagePanel = document.querySelector(".figma-detail-image");
+      const title = document.getElementById("designTitle");
+      const role = document.getElementById("designRole");
+      const description = document.getElementById("designDescription");
+      const tools = document.getElementById("designTools");
+      const counter = document.getElementById("designCounter");
+      let currentIndex = 0;
+
+      function setImagePanelColor(imageSrc) {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+          const sampleSize = 24;
+          let red = 0;
+          let green = 0;
+          let blue = 0;
+          let count = 0;
+
+          canvas.width = sampleSize;
+          canvas.height = sampleSize;
+          ctx.drawImage(img, 0, 0, sampleSize, sampleSize);
+
+          const pixels = ctx.getImageData(0, 0, sampleSize, sampleSize).data;
+
+          for (let i = 0; i < pixels.length; i += 4) {
+            const alpha = pixels[i + 3];
+            if (alpha < 128) continue;
+
+            red += pixels[i];
+            green += pixels[i + 1];
+            blue += pixels[i + 2];
+            count++;
+          }
+
+          if (!count) return;
+
+          red = Math.round((red / count) * 0.35 + 255 * 0.65);
+          green = Math.round((green / count) * 0.35 + 255 * 0.65);
+          blue = Math.round((blue / count) * 0.35 + 255 * 0.65);
+          detailImagePanel.style.setProperty(
+            "--figma-image-bg",
+            `rgb(${red}, ${green}, ${blue})`,
+          );
+        };
+
+        img.src = imageSrc;
+      }
+
+      function showDesign(index) {
+        currentIndex = (index + cards.length) % cards.length;
+        const card = cards[currentIndex];
+        const image = card.querySelector("img");
+
+        title.textContent = card.dataset.title;
+        role.textContent = card.dataset.role;
+        description.textContent = card.dataset.description;
+        tools.textContent = card.dataset.tools;
+        detailImage.src = image.src;
+        detailImage.alt = image.alt;
+        lightboxBg.style.backgroundImage = `url("${image.src}")`;
+        counter.textContent = `${currentIndex + 1} / ${cards.length}`;
+        setImagePanelColor(image.src);
+      }
+
+      cards.forEach((card, index) => {
+        card.addEventListener("click", () => {
+          showDesign(index);
+          lightbox.classList.add("show");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.classList.add("modal-open");
+        });
+      });
+
+      closeDesign.addEventListener("click", () => {
+        lightbox.classList.remove("show");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+        cards.forEach((item) => item.classList.remove("active"));
+      });
+
+      prevDesign.addEventListener("click", () => {
+        showDesign(currentIndex - 1);
+      });
+
+      nextDesign.addEventListener("click", () => {
+        showDesign(currentIndex + 1);
+      });
+
+      window.addEventListener("keydown", (event) => {
+        if (!lightbox.classList.contains("show")) return;
+
+        if (event.key === "Escape") {
+          closeDesign.click();
+        }
+
+        if (event.key === "ArrowLeft") {
+          showDesign(currentIndex - 1);
+        }
+
+        if (event.key === "ArrowRight") {
+          showDesign(currentIndex + 1);
+        }
+      });
+    </script>
+  </body>
+</html>
